@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Registration Form</title>
+   <link rel="stylesheet" href="practice.css">
+</head>
+<body>
+   <button class="darkModeToggle">Toggle Dark Mode</button>
+
+   <h1>Registration Form</h1>
+   <form>
+      <div class="formGroup">
+         <label for="nameInput">Enter Your Name:</label>
+         <input type="text" id="nameInput" name="nameInput" placeholder="Enter Name">
+      </div>
+
+      <div class="formGroup">
+         <label for="emailInput">Enter Your Email:</label>
+         <input type="email" id="emailInput" name="nameInput" placeholder="Enter Email">
+      </div>
+
+      <div class="formGroup">
+         <label for="passwordInput">Enter Your Password:</label>
+         <input type="password" id="passwordInput" name="passwordInput" placeholder="Enter Password">
+      </div>
+
+      <div class="formGroup">
+         <label for="phoneInput">Enter Your Phone Number:</label>
+         <input type="tel" id="phoneInput" name="phoneInput" placeholder="Enter Phone Number">
+      </div>
+
+      <div class="formGroup">
+         <label for="genderInput">Enter Your Gender</label>
+         <label for="male">Male</label>
+         <input type="radio" id="male" name="radioGroup" value="male">
+         <label for="female">Female</label>
+         <input type="radio" id="female" name="radioGroup" value="female">
+      </div>
+
+      <div class="formGroup">
+         <label for="dobInput">Enter Your Date of Birth:</label>
+         <input type="date" id="dobInput" name="dobInput" placeholder="Enter Date of Birth">
+      </div>
+
+      <div class="formGroup">
+         <label for="dobTimeInput">Enter Your Time of Birth:</label>
+         <input type="time" id="dobTimeInput" name="dobTimeInput" placeholder="Enter Time of Birth">
+      </div>
+
+      <div class="formGroup">
+         <label for="imageInput">Profile Photo:</label>
+         <input type="file" id="imageInput" name="imageInput" accept="image/*">
+         <img id="profileImagePreview" src="" alt="Profile Photo Preview" style="display:none;">
+      </div>
+      
+      <div class="formGroup">
+         <label for="carModeInput">Enter Your Car's Model:</label>
+         <select name="carModeInput" id="carModeInput">
+            <option value="car1">Car1</option>
+            <option value="car2">Car2</option>
+            <option value="car3">Car3</option>
+         </select>
+      </div>
+
+      <div class="formGroup">
+         <label for="colorInput">Select Color for your car:</label>
+         <input type="color" id="colorInput" name="colorInput">
+      </div>
+
+      <div class="form-group">
+         <label for="textareaInput">Textarea:</label>
+         <textarea id="textareaInput" name="textareaInput" rows="4" placeholder="Enter text"></textarea>
+     </div>
+
+     <div class="form-group">
+         <button type="submit">Submit</button>
+     </div>
+
+      <div class="form-group">
+         <button type="reset">Reset</button>
+      </div>
+     
+
+
+   </form>
+</body>
+<script src="practice.js"></script>
+</html>

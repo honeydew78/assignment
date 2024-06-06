@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive HTML Form with Dark Mode and Profile Photo</title>
+    <style>
+        :root {
+            --background-color: #fff;
+            --text-color: #000;
+            --input-background: #fff;
+            --input-text: #000;
+            --button-background: #007bff;
+            --button-text: #fff;
+        }
+
+        body.dark {
+            --background-color: #121212;
+            --text-color: #e0e0e0;
+            --input-background: #333;
+            --input-text: #e0e0e0;
+            --button-background: #1a73e8;
+            --button-text: #e0e0e0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            background-color: var(--background-color);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select, textarea, button {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            background-color: var(--input-background);
+            color: var(--input-text);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: var(--button-background);
+            color: var(--button-text);
+            cursor: pointer;
+        }
+
+        .dark-mode-toggle {
+            display: block;
+            margin: 0 auto 20px auto;
+            padding: 10px 20px;
+            background-color: var(--button-background);
+            color: var(--button-text);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .profile-photo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-photo img {
+            max-width: 100px;
+            margin-top: 10px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="dark-mode-toggle">Toggle Dark Mode</button>
+
+    <h1>Comprehensive HTML Form</h1>
+    <form>
+        <!-- Text Input -->
+        <div class="form-group">
+            <label for="textInput">Text Input:</label>
+            <input type="text" id="textInput" name="textInput" placeholder="Enter text">
+        </div>
+
+        <!-- Password Input -->
+        <div class="form-group">
+            <label for="passwordInput">Password Input:</label>
+            <input type="password" id="passwordInput" name="passwordInput" placeholder="Enter password">
+        </div>
+
+        <!-- Email Input -->
+        <div class="form-group">
+            <label for="emailInput">Email Input:</label>
+            <input type="email" id="emailInput" name="emailInput" placeholder="Enter email">
+        </div>
+
+        <!-- Number Input -->
+        <div class="form-group">
+            <label for="numberInput">Number Input:</label>
+            <input type="number" id="numberInput" name="numberInput" placeholder="Enter number">
+        </div>
+
+        <!-- Date Input -->
+        <div class="form-group">
+            <label for="dateInput">Date Input:</label>
+            <input type="date" id="dateInput" name="dateInput">
+        </div>
+
+        <!-- Time Input -->
+        <div class="form-group">
+            <label for="timeInput">Time Input:</label>
+            <input type="time" id="timeInput" name="timeInput">
+        </div>
+
+        <!-- Range Input -->
+        <div class="form-group">
+            <label for="rangeInput">Range Input:</label>
+            <input type="range" id="rangeInput" name="rangeInput" min="0" max="100">
+        </div>
+
+        <!-- Color Input -->
+        <div class="form-group">
+            <label for="colorInput">Color Input:</label>
+            <input type="color" id="colorInput" name="colorInput">
+        </div>
+
+        <!-- Checkbox -->
+        <div class="form-group">
+            <label>Checkbox:</label>
+            <input type="checkbox" id="checkbox1" name="checkbox1" value="value1">
+            <label for="checkbox1">Checkbox 1</label>
+            <input type="checkbox" id="checkbox2" name="checkbox2" value="value2">
+            <label for="checkbox2">Checkbox 2</label>
+        </div>
+
+        <!-- Radio Buttons -->
+        <div class="form-group">
+            <label>Radio Buttons:</label>
+            <input type="radio" id="radio1" name="radioGroup" value="radio1">
+            <label for="radio1">Radio 1</label>
+            <input type="radio" id="radio2" name="radioGroup" value="radio2">
+            <label for="radio2">Radio 2</label>
+        </div>
+
+        <!-- Select Dropdown -->
+        <div class="form-group">
+            <label for="selectInput">Select Dropdown:</label>
+            <select id="selectInput" name="selectInput">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+        </div>
+
+        <!-- Textarea -->
+        <div class="form-group">
+            <label for="textareaInput">Textarea:</label>
+            <textarea id="textareaInput" name="textareaInput" rows="4" placeholder="Enter text"></textarea>
+        </div>
+
+        <!-- File Input for Profile Photo -->
+        <div class="form-group profile-photo">
+            <label for="fileInput">Profile Photo:</label>
+            <input type="file" id="fileInput" name="fileInput" accept="image/*">
+            <img id="profileImagePreview" src="" alt="Profile Photo Preview" style="display:none;">
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+
+        <!-- Reset Button -->
+        <div class="form-group">
+            <button type="reset">Reset</button>
+        </div>
+
+        <!-- Hidden Input -->
+        <input type="hidden" name="hiddenInput" value="hiddenValue">
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const darkModeToggle = document.querySelector('.dark-mode-toggle');
+            const body = document.body;
+
+            darkModeToggle.addEventListener('click', () => {
+               body.classList.toggle('dark');
+            });
+
+            const fileInput = document.querySelector('#fileInput');
+            const profileImagePreview = document.querySelector('#profileImagePreview');
+
+            fileInput.addEventListener('change', (event) => {
+                const reader = new FileReader();
+                reader.onload = function() {
+                    profileImagePreview.src = reader.result;
+                    profileImagePreview.style.display = 'block';
+                }
+                reader.readAsDataURL(event.target.files[0]);
+            });
+
+            const resetButton = document.querySelector('button[type="reset"]');
+            resetButton.addEventListener('click', () => {
+                profileImagePreview.src = '';
+                profileImagePreview.style.display = 'none';
+            });
+        });
+    </script>
+
+</body>
+</html>
